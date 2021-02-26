@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d65aefc-2702-4433-bbf3-739cf77ebe84">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\main\webapp\WEB-INF\jsp\Report\DataAdapter.xml"/>
+	<subDataset name="Dataset1" uuid="21abf5f8-bd8a-45ae-87c6-591492618faa">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\main\webapp\WEB-INF\jsp\Report\DataAdapter.xml"/>
+		<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="741"/>
+		<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="245"/>
+		<parameter name="studentID" class="java.lang.Long"/>
+		<queryString language="SQL">
+			<![CDATA[select * from  testdb.student  where studentID= $P{studentID}]]>
+		</queryString>
+		<field name="studentid" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="studentid"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+		</field>
+		<field name="city" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="city"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+		</field>
+		<field name="gender" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="gender"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+		</field>
+		<field name="student_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="student_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+		</field>
+	</subDataset>
+	<parameter name="studentID" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[select * from  testdb.student where studentID= $P{studentID}]]>
+	</queryString>
+	<field name="studentid" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="studentid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="city"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gender"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="student_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="student_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="0" width="69" height="30" uuid="ca9624e5-3d43-4ae9-995d-bb7f50d1d199"/>
+				<text><![CDATA[Student ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="1" width="87" height="30" uuid="78df0351-ec43-43bd-b591-b0ddabd279f9"/>
+				<text><![CDATA[Student Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="1" width="79" height="30" uuid="16052a33-e9cf-409e-983b-eb9da1025de8"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="1" width="90" height="30" uuid="de91dbb3-56e4-4600-bb91-ef5bdb3a289c"/>
+				<text><![CDATA[City]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="2" width="89" height="30" uuid="bef5e008-b807-4195-a386-8c3f4202c355"/>
+				<textFieldExpression><![CDATA[$F{student_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="1" width="69" height="30" uuid="762248e8-2d28-4e7d-8eac-bbbbf86e4ecd"/>
+				<textFieldExpression><![CDATA[$F{studentid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="1" width="79" height="27" uuid="640040c5-21c1-4897-adbf-2d515c65e950"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="0" width="88" height="30" uuid="7b69c22c-564d-47bc-93a3-37bed660119c"/>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="103" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="132" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="50" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
